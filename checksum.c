@@ -25,17 +25,21 @@ int main (int argc, char * argv[], char ** envp) {
   byte complement;
   int quotient;
   int remainder;
-  
-  byte header[10];
+  byte buffer[10];
 
- read(STDIN_FILENO, &header, 10); 
+ read(STDIN_FILENO, &buffer, 10); 
+ 
+         for(int c = 1; c < count; c++) {
+               printf("%d ", buffer[c]);
+               printf("\n");
+         }
    
-         for(int c = 1; c <= count; c++) {
+         for(int c = 1; c < count; c++) {
                if (c == 6) {
-                  checksum = header[c];
-                  header[c] = 0;
+                  checksum = buffer[c];
+                  buffer[c] = 0;
                }
-            sum += header[c];
+            sum += buffer[c];
        }
        
    quotient = sum / (max_int + 1);
