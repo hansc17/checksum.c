@@ -29,12 +29,12 @@ int main (int argc, char * argv[], char ** envp) {
 
  read(STDIN_FILENO, &buffer, 10); 
  
-         for(int c = 1; c < count; c++) {
+         for(int c = 1; c <= count; c++) {
                printf("%d ", buffer[c]);
                printf("\n");
          }
    
-         for(int c = 1; c < count; c++) {
+         for(int c = 1; c <= count; c++) {
                if (c == 6) {
                   checksum = buffer[c];
                   buffer[c] = 0;
